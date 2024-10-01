@@ -1,56 +1,64 @@
 using System.Collections;
 using UnityEngine;
 
-public class Explode : MonoBehaviour
+public class PlayerDeathHandler : MonoBehaviour
 {
-    private CapsuleCollider2D playerCollider;
-    public Vector3 respawnPosition;
-    public float respawnDelay = 0.3f; // Time to wait before respawning
+    public AttemptCounter attemptCounter; // Reference to the AttemptCounter script
+    public float respawnDelay = 0.1f; // Time before the player respawns
+
+    private BoxCollider2D playerCollider;
+    private Rigidbody2D rb;
+    private Vector3 initialPosition; // Store the player's initial position
 
     void Start()
     {
-        // Get the CapsuleCollider2D component attached to the Player GameObject
-        playerCollider = GetComponent<CapsuleCollider2D>();
-        respawnPosition = transform.position; // Set initial respawn position
+        // Get the player's Collider and Rigidbody components
+        playerCollider = GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
+
+        // Store the player's initial position as the respawn point
+        initialPosition = transform.position;
     }
 
-    // This is called when another Collider2D enters the trigger zone of this GameObject.
     void OnTriggerEnter2D(Collider2D target)
     {
-        // Check if the entering GameObject has the Deadly tag
-        if (target.gameObject.CompareTag("Deadly"))
+        // Check if the player collides with an object tagged "Deadly"
+        if (target.CompareTag("Deadly"))
         {
-            StartCoroutine(Respawn());
+            HandleDeath();
         }
     }
 
-    // This is called when a collision with another Collider2D occurs.
     void OnCollisionEnter2D(Collision2D target)
     {
-        // Check if the colliding GameObject has the Deadly tag
         if (target.gameObject.CompareTag("Deadly"))
         {
-            StartCoroutine(Respawn());
+            HandleDeath();
         }
     }
 
-    private IEnumerator Respawn()
+    private void HandleDeath()
     {
-        // Disable the CapsuleCollider2D on the Player to prevent further collisions
-        if (playerCollider != null)
-        {
-            playerCollider.enabled = false;
-        }
+        // Disable player controls and collider
+        playerCollider.enabled = false;
+        rb.velocity = Vector2.zero; // Stop the player movement
 
-        yield return new WaitForSeconds(respawnDelay); // Wait for a short period before respawning
+        // Increment the attempt counter
+        attemptCounter.OnPlayerDeath();
 
-        // Reset the player's position
-        transform.position = respawnPosition; // Move player back to respawn position
+        // Start the respawn process
+        StartCoroutine(RespawnPlayer());
+    }
 
-        // Re-enable the CapsuleCollider2D
-        if (playerCollider != null)
-        {
-            playerCollider.enabled = true;
-        }
+    private IEnumerator RespawnPlayer()
+    {
+        // Wait for a brief delay before respawning
+        yield return new WaitForSeconds(respawnDelay);
+
+        // Move the player to the initial position where the player started the level
+        transform.position = initialPosition;
+
+        // Enable the player's collider again
+        playerCollider.enabled = true;
     }
 }

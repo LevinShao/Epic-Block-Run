@@ -1,3 +1,5 @@
+// THIS SCRIPT CURRENTLY DOES NOT WORK, SORRY FOR THE INCONVENIENCE
+
 using UnityEngine;
 
 public class DeathSFX : MonoBehaviour

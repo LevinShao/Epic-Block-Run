@@ -20,7 +20,6 @@ public class CameraFollow : MonoBehaviour
     {
         t = target.transform;
     }
-
     
     void Update() // Update is called once per frame
     {

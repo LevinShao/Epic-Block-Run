@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class NextLevel : MonoBehaviour
 {
-
     void OnTriggerEnter2D(Collider2D target){
         if(target.gameObject.tag == "Player"){ //If the end of level collectible collides with the player
             Destroy(gameObject); //Remove player from screen
@@ -25,4 +24,3 @@ public class NextLevel : MonoBehaviour
         }
     }
 }
-

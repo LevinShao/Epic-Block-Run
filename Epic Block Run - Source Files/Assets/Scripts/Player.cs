@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //Required if we want to work with Scenes
 
-
-
 public class Player : MonoBehaviour
 {
     public float speed = 150f; //Stores player speed as a float
@@ -33,8 +31,6 @@ public class Player : MonoBehaviour
         controller = GetComponent<PlayerController>();
         animator = GetComponent<Animator>();
         audioData = GetComponent<AudioSource>();
-
-        
     }
 
     void Update()
@@ -65,9 +61,7 @@ public class Player : MonoBehaviour
                 
                 forceY = jetSpeed * controller.moving.y;
                 animator.SetInteger("AnimState", 2);
-                
-
-                
+    
             }
             else if (absVelY == 0 && !standing) //Check if the player is not moving vertically and set the animation state accordingly
             {
@@ -110,8 +104,4 @@ public class Player : MonoBehaviour
             canJump = true;
         }
     }
-
-
-
-
 }
