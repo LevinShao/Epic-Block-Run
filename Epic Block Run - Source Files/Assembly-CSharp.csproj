@@ -64,14 +64,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MusicResetter.cs" />
+    <Compile Include="Assets\Scripts\ExitConfirmationHandler.cs" />
     <Compile Include="Assets\Scripts\NextLevel.cs" />
     <Compile Include="Assets\Scripts\AttemptCounter.cs" />
     <Compile Include="Assets\Scripts\DeathSFX.cs" />
+    <Compile Include="Assets\Scripts\ExitButtonHandler.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Explode.cs" />
     <Compile Include="Assets\Scripts\Collectible.cs" />
     <Compile Include="Assets\Scripts\ClickToContinue.cs" />
     <Compile Include="Assets\Scripts\ColorSwitchingText.cs" />
+    <Compile Include="Assets\Scripts\ConfirmationHandler.cs" />
     <Compile Include="Assets\Scripts\ClickToQuit.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />

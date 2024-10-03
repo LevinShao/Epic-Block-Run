@@ -11,12 +11,12 @@ public class CameraFollow : MonoBehaviour
    
     void Awake()
     {
-        var cam = GetComponent<Camera>(); //Gets the camera into our script here
-        cam.orthographicSize = 15; //Sets the size of the camera
+        var cam = GetComponent<Camera>(); // Gets the camera into our script here
+        cam.orthographicSize = 15; // Sets the size of the camera
 
     }
 
-    void Start() //Start is called before the first frame update
+    void Start() // Start is called before the first frame update
     {
         t = target.transform;
     }
@@ -24,7 +24,7 @@ public class CameraFollow : MonoBehaviour
     void Update() // Update is called once per frame
     {
         if(target != null){
-            transform.position = new Vector3(t.position.x, t.position.y, transform.position.z); //This creates a camera vector which follows the player.
+            transform.position = new Vector3(t.position.x, t.position.y, transform.position.z); // This creates a camera vector which follows the player.
 
         }
     }
