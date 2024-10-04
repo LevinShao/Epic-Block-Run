@@ -1,21 +1,26 @@
+// THIS IS AN EXTENSION TO ClickToQuit.cs
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ConfirmationHandler : MonoBehaviour
 {
-    public Button confirmButton; // Reference to the Confirm button
-    public Button cancelButton; // Reference to the Cancel button
-    public GameObject confirmationPanel; // Reference to the Confirmation Panel
+    public Button confirmButton; // Reference to the confirm button
+    public Button cancelButton; // Reference to the cancel button
+    public GameObject confirmationPanel; // Reference to the confirmation panel
 
     void Start()
     {
-        // Add listeners to the Confirm and Cancel buttons
+        // Add listeners to the confirm and cancel buttons
         confirmButton.onClick.AddListener(QuitGame);
         cancelButton.onClick.AddListener(CloseConfirmation);
     }
 
     void Update()
     {
+        // --- KEYBIND SHORTCUTS ---
+
+        // ESC to close confirmation panel
         // Check if the Esc key is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -23,7 +28,7 @@ public class ConfirmationHandler : MonoBehaviour
             CloseConfirmation();
         }
 
-        // Basically does the same thing as above, except that this time the program will close itself when the "Enter/Return" key is pressed
+        // Enter/Return to quit and close the game
         if (Input.GetKeyDown(KeyCode.Return))
         {
             QuitGame();
@@ -32,13 +37,13 @@ public class ConfirmationHandler : MonoBehaviour
 
     void QuitGame()
     {
-        // Quit the application when Confirm is clicked
+        // Quit the application when the confirm button or Enter/Return key is clicked
         Application.Quit();
     }
 
     void CloseConfirmation()
     {
-        // Hide the confirmation panel when Cancel or Esc is clicked
+        // Hide the confirmation panel when the cancel button or Esc key is clicked
         confirmationPanel.SetActive(false);
     }
 }

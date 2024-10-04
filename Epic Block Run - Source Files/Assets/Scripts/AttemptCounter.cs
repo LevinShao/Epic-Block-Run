@@ -12,7 +12,7 @@ public class AttemptCounter : MonoBehaviour
         UpdateAttemptText();
     }
 
-    // Call this method when the player dies
+    // This method is called when the player dies
     public void OnPlayerDeath()
     {
         attemptCount++; // Increment the attempt counter

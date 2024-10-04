@@ -1,39 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // This helps to switch scenes
+using UnityEngine.SceneManagement; // This is crucial for scene switching
 
 public class ClickToQuit : MonoBehaviour
 {
-    public Button quitButton; // Reference to the Quit button
-    public GameObject confirmationPanel; // Reference to the Confirmation Panel
+    public Button quitButton; // Reference to the quit button
+    public GameObject confirmationPanel; // Reference to the confirmation panel
 
     void Start()
     {
-        Button btn = quitButton.GetComponent<Button>(); // Get the Quit button component
+        Button btn = quitButton.GetComponent<Button>(); // Get the quit button component
         btn.onClick.AddListener(ShowConfirmation); // Add listener to show the confirmation panel
-        confirmationPanel.SetActive(false); // Hide the confirmation panel initially
+        confirmationPanel.SetActive(false); // Hide the confirmation panel when the game first starts
     }
 
-	void Update()
+    void Update()
     {
+        // --- KEYBIND SHORTCUT ---
+        // Esc to show confirmation panel
+        
         // Check if the Esc key is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Show the confirmation panel when Esc is pressed
-            ShowConfirmation();
+            // Show the confirmation panel when Esc is pressed, but only if it's not already active
+            if (!confirmationPanel.activeInHierarchy)
+            {
+                ShowConfirmation();
+            }
         }
-
-        // Basically does the same thing as above, except that this time Level 1 will begin when the "Enter/Return" key is pressed
-		if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Proceed();
-        }
-    }
-
-	void Proceed()
-    {
-        // Load Level 1 when the Return/Enter key is clicked
-        SceneManager.LoadScene("Level_1");
     }
 
     void ShowConfirmation()

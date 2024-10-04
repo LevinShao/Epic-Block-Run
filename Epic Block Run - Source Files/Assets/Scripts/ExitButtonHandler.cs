@@ -9,7 +9,7 @@ public class ExitButtonHandler : MonoBehaviour
     void Start()
     {
         // Add a listener to the exit button
-        exitButton.onClick.AddListener(ShowExitConfirmation);
+        exitButton.onClick.AddListener(ToggleExitConfirmation);
     }
 
     void Update()
@@ -18,13 +18,13 @@ public class ExitButtonHandler : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Escape))
     {
         // Close the confirmation panel when Esc is pressed
-        ShowExitConfirmation();
+        ToggleExitConfirmation();
     }
     }
 
-    void ShowExitConfirmation()
+    void ToggleExitConfirmation()
     {
-        // Activate the exit confirmation panel
-        exitConfirmationPanel.SetActive(true);
+        // Toggle the active state of the exit confirmation panel
+        exitConfirmationPanel.SetActive(!exitConfirmationPanel.activeSelf);
     }
 }
