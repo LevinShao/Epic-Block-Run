@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Epic Block Run - Unity Game Files.sln"
+    "dotnet.defaultSolution": "Main Unity Files.sln"
 }

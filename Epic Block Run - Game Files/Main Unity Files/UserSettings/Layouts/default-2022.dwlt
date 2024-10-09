@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -465,7 +465,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -473,17 +473,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animations
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\levin\Documents\GitHub\Epic-Block-Run\Epic Block Run
-    - Unity Game Files
+    - Game Files\Main Unity Files
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ca730000
-    m_LastClickedID: 29642
-    m_ExpandedIDs: 00000000b073000000ca9a3b
+    scrollPos: {x: 0, y: 32}
+    m_SelectedIDs: d2730000
+    m_LastClickedID: 29650
+    m_ExpandedIDs: 00000000b0730000da73000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000267000006e7000005c6e00009271000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -651,25 +651,25 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: ae770000
       m_LastClickedID: 0
-      m_ExpandedIDs: 1afbffff
+      m_ExpandedIDs: 6aa3fdff18a4fdffb0a5fdff88a7fdff94aafdff0eaefdff5ebbfdff0cbcfdffa4bdfdff7cbffdff88c2fdfffcc5fdff66ecfdffe0effdffb0f1fdff3810feffd213feffde16feffb618feff741afeff701cfefff81ffeffb82ffeffca32feffa834feff7236feff743ffeff4c41feff8044feffbc59feff985bfeff405ffeff9062feff2864feff3467feff1269feffdc6afeff2a7dfeff087ffeffd280feffa88ffeff1692feffa897feffb699feff7c9bfeffa09dfeff7aa5feff86b8feffa0bafeff32c2feffd4c3feff1ec6feffe8c7feff20ccfeffbecdfeffaecffeff4cd1feff2ad3fefff0d4feffbcd9feffbadbfeffe4dffeffd8e4feffc453ffff3866ffff847effff0a8bffffd29cffff5ea7ffff60b0ffff24b5ffff9eb8ffffe2bbffff72c2ffff3ac6ffff12c8ffffaac9ffffb0cbffff44d2ffff46d7ffff88e7ffff28effffff6f1ffff00f5ffff1afbffff18790000dc840000e28500007e89000030920000b4960000369e00003c9f0000b2a90000f4b000007eb2000016e8000024e9000038f30000922b0100163101005e3801007c3901009a390100b2390100dc390100ec390100123a01008c4301008a670100666c0100646e0100727701005c7e01004a8d0100048e0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Question Mark 1
+        m_OriginalName: Question Mark 1
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -33284
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 11}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1059,9 +1059,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 190.92624, y: -10.355893, z: -3.496735}
+    m_Target: {x: 147.483, y: -30.863289, z: -0.9394964}
     speed: 2
-    m_Value: {x: 190.92624, y: -10.355893, z: -3.496735}
+    m_Value: {x: 150.803, y: -31.613626, z: -0.88121706}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1111,9 +1111,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 125.25333
+    m_Target: 135.33846
     speed: 2
-    m_Value: 125.25333
+    m_Value: 129.51048
   m_Ortho:
     m_Target: 1
     speed: 2
