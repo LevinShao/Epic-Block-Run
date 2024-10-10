@@ -11975,11 +11975,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298536732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c0f6205139bd744292a42ce373ac13a, type: 3}
+  m_Script: {fileID: 11500000, guid: fb21ef89b6b473640894630547e52ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   exitButton: {fileID: 1298536735}
-  exitConfirmationPanel: {fileID: 1680146929}
+  exitConfirmationWindow: {fileID: 1680146929}
 --- !u!114 &1298536735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13295,7 +13295,7 @@ GameObject:
   - component: {fileID: 1680146932}
   - component: {fileID: 1680146931}
   m_Layer: 5
-  m_Name: Confirmation Window
+  m_Name: Exit Confirmation Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13333,12 +13333,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1680146929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89c4475a3998d64db7ecbd0d8f66960, type: 3}
+  m_Script: {fileID: 11500000, guid: 0effa41e3b7d39b4ba18757ab9b42753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   confirmButton: {fileID: 2005264302}
   cancelButton: {fileID: 352181472}
-  exitConfirmationPanel: {fileID: 1680146929}
+  exitConfirmationWindow: {fileID: 1680146929}
 --- !u!114 &1680146932
 MonoBehaviour:
   m_ObjectHideFlags: 0

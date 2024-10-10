@@ -1,13 +1,16 @@
-// THIS IS AN EXTENSION TO ClickToQuit.cs
+// THIS IS AN EXTENSION TO SplashScreenQuit.cs
+
+// The "exit confirmation window" referenced in this script refers to the exit confirmation window for the splash screen
+// Not the exit confirmation window for the main levels.
 
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ConfirmationHandler : MonoBehaviour
+public class SplashScreenQuitConfirmationHandler : MonoBehaviour
 {
     public Button confirmButton; // Reference to the confirm button
     public Button cancelButton; // Reference to the cancel button
-    public GameObject confirmationPanel; // Reference to the confirmation panel
+    public GameObject exitConfirmationWindow; // Reference to the exit confirmation window
 
     void Start()
     {
@@ -20,11 +23,11 @@ public class ConfirmationHandler : MonoBehaviour
     {
         // --- KEYBIND SHORTCUTS ---
 
-        // ESC to close confirmation panel
+        // ESC to close the exit confirmation window
         // Check if the Esc key is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Close the confirmation panel when Esc is pressed
+            // Close the exit confirmation window when Esc is pressed
             CloseConfirmation();
         }
 
@@ -43,7 +46,7 @@ public class ConfirmationHandler : MonoBehaviour
 
     void CloseConfirmation()
     {
-        // Hide the confirmation panel when the cancel button or Esc key is clicked
-        confirmationPanel.SetActive(false);
+        // Hide the exit confirmation window when the cancel button or Esc key is clicked
+        exitConfirmationWindow.SetActive(false);
     }
 }

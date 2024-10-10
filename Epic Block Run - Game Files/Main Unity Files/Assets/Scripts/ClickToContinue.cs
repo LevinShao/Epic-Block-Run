@@ -7,7 +7,7 @@ using UnityEngine.UI; // You MUST include this to work with User Interfaces (but
 public class ClickToContinue : MonoBehaviour
 {
 	public Button yourButton;
-	public GameObject confirmationPanel; // Reference to the confirmation panel
+	public GameObject exitConfirmationWindow; // Reference to the exit confirmation window
 
 	void Start () {
 		Button btn = yourButton.GetComponent<Button>(); // Stores a button in the 'btn' variable
@@ -19,8 +19,8 @@ public class ClickToContinue : MonoBehaviour
 		// --- KEYBIND SHORTCUT ---
         // Enter/Return to begin Level 1
 
-        // Only proceed to Level 1 if the confirmation panel is NOT active
-        if (Input.GetKeyDown(KeyCode.Return) && !confirmationPanel.activeInHierarchy)
+        // Only proceed to Level 1 if the exit confirmation window is NOT active
+        if (Input.GetKeyDown(KeyCode.Return) && !exitConfirmationWindow.activeInHierarchy)
         {
             TaskOnClick();
         }
