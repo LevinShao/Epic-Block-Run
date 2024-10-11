@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
     public Vector2 moving = new Vector2(); // Public variable to store player's movement direction
 
     // Start is called before the first frame update
