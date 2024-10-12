@@ -1,29 +1,16 @@
-// THIS SCRIPT CURRENTLY DOES NOT WORK, SORRY FOR THE INCONVENIENCE
-
-using System.Collections;
 using UnityEngine;
 
 public class MusicResetter : MonoBehaviour
 {
-    public AudioSource backgroundMusic;  
-    public GameObject player;            
+    public AudioSource BGMSource; // Reference to the AudioSource component on the BGM GameObject
 
-    void Update()
+    // Method to reset the background music
+    public void ResetMusic()
     {
-        // Check if the player is inactive
-        if (player == null || !player.activeInHierarchy)
+        if (BGMSource != null)
         {
-            ResetMusic();
-        }
-    }
-
-    void ResetMusic()
-    {
-        // Stop and restart the background music
-        if (backgroundMusic != null)
-        {
-            backgroundMusic.Stop();
-            backgroundMusic.Play();
+            BGMSource.Stop(); // Stop the music
+            BGMSource.Play(); // Play the music from the beginning
         }
     }
 }

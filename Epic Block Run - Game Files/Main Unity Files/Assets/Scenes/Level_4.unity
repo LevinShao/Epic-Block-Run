@@ -2355,6 +2355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attemptCounter: {fileID: 685618787}
+  musicResetter: {fileID: 1351534356}
   respawnDelay: 0.1
 --- !u!4 &404784258 stripped
 Transform:
@@ -14878,8 +14879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc2e76c572462d4ca738edca736c30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 1351534354}
-  player: {fileID: 374908327}
+  BGMSource: {fileID: 1351534354}
 --- !u!1001 &1364067228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17392,8 +17392,8 @@ SceneRoots:
   - {fileID: 55764377}
   - {fileID: 2093351958}
   - {fileID: 920615428}
-  - {fileID: 1351534355}
-  - {fileID: 843836970}
   - {fileID: 649249418}
   - {fileID: 513130118}
+  - {fileID: 1351534355}
+  - {fileID: 843836970}
   - {fileID: 754935643751419159}

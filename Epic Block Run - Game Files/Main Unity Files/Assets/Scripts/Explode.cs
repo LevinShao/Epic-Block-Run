@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerDeathHandler : MonoBehaviour
+public class Explode : MonoBehaviour
 {
-    public AttemptCounter attemptCounter; // Reference to the AttemptCounter script
+    public AttemptCounter attemptCounter; // Reference to the AttemptCounter.cs script
+    public MusicResetter musicResetter; // Reference to the MusicResetter.cs script
     public float respawnDelay = 0.1f; // Time before the player respawns
 
     private BoxCollider2D playerCollider;
@@ -12,7 +13,7 @@ public class PlayerDeathHandler : MonoBehaviour
 
     void Start()
     {
-        // Get the player's Collider and Rigidbody components
+        // Get the player's Box Collider and Rigidbody 2D component
         playerCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -22,7 +23,7 @@ public class PlayerDeathHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D target)
     {
-        // Check if the player collides with an object tagged "Deadly"
+        // Check if the player collides with a deadly object
         if (target.CompareTag("Deadly"))
         {
             HandleDeath();
@@ -45,6 +46,12 @@ public class PlayerDeathHandler : MonoBehaviour
 
         // Increment the attempt counter
         attemptCounter.OnPlayerDeath();
+
+        // Reset the background music
+        if (musicResetter != null)
+        {
+            musicResetter.ResetMusic();
+        }
 
         // Start the respawn process
         StartCoroutine(RespawnPlayer());

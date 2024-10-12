@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yourButton: {fileID: 275005390}
-  exitConfirmationWindow: {fileID: 0}
+  exitConfirmationWindow: {fileID: 788165399}
 --- !u!1 &286164889
 GameObject:
   m_ObjectHideFlags: 0

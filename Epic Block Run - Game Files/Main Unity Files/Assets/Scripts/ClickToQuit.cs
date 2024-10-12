@@ -13,7 +13,17 @@ public class ClickToQuit : MonoBehaviour
 		btn.onClick.AddListener(TaskOnClick); // Checks to see if the button is clicked.
 	}
 
-	void TaskOnClick(){
+    // --- KEYBIND SHORTCUT ---
+    // Enter/Return to quit game
+	
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.Return))
+        {
+            TaskOnClick();
+        }
+	}
+
+	void TaskOnClick() {
 		Application.Quit(); // Quits if the button is clicked
 	}
 }

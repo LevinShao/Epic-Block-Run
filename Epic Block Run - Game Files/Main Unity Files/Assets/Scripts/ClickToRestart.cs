@@ -13,7 +13,7 @@ public class ClickToRestart : MonoBehaviour
 		btn.onClick.AddListener(TaskOnClick); // Checks to see if the button is clicked.
 	}
 
-	void TaskOnClick(){
+	void TaskOnClick() {
 		SceneManager.LoadScene("SplashScreen"); // Loads the splash screen if the button is clicked
 	}
 }
