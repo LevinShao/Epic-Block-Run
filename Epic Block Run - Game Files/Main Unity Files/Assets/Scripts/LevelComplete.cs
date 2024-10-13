@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LevelComplete : MonoBehaviour
 {
-      public AudioSource JumpSound;
+      public AudioSource LevelCompleteSound;
 
       void OnCollisionEnter(Collision collision)
       {
-        JumpSound.Play();
+        LevelCompleteSound.Play();
       }
 }

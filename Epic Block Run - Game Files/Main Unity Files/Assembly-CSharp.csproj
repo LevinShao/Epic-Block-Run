@@ -68,7 +68,6 @@
     <Compile Include="Assets\Scripts\ClickToRestart.cs" />
     <Compile Include="Assets\Scripts\NextLevel.cs" />
     <Compile Include="Assets\Scripts\AttemptCounter.cs" />
-    <Compile Include="Assets\Scripts\DeathSFX.cs" />
     <Compile Include="Assets\Scripts\LevelExitButton.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Explode.cs" />
