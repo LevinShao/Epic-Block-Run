@@ -1,25 +1,85 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Collectible : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private bool levelCompleted = false; // Ensure this only triggers once
+    public GameObject collectible; // Reference to the checkpoint/end portal
+    public GameObject player; // Reference to the player
+    public AudioSource audioSource; // Reference to the level completion sound player's audio source component
+    public TextMeshProUGUI completionText; // Reference to the level completion message
+    public AudioClip levelCompleteSound; // Level completion sound effect to play upon level completion
+
     void Start()
     {
-        
+        completionText.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D target)
     {
-        
+        if (target.gameObject.CompareTag("Player") && !levelCompleted)
+        {
+            levelCompleted = true; // Mark level as completed to avoid multiple triggers
+
+            // Hide the collectible by disabling its visual appearance (like SpriteRenderer)
+            SpriteRenderer sr = collectible.GetComponent<SpriteRenderer>();
+            if (sr != null)
+                sr.enabled = false; // Hide the visual appearance of the collectible
+
+            // Optionally disable its collider to prevent further interaction
+            Collider2D collectibleCollider = collectible.GetComponent<Collider2D>();
+            if (collectibleCollider != null)
+                collectibleCollider.enabled = false;
+
+            // Hide the player visually by disabling only the SpriteRenderer
+            SpriteRenderer playerSr = player.GetComponent<SpriteRenderer>();
+            if (playerSr != null)
+                playerSr.enabled = false; // Hide the player's visual appearance
+
+            // Play the level complete sound effect
+            if (audioSource != null && levelCompleteSound != null)
+            {
+                audioSource.PlayOneShot(levelCompleteSound);
+            }
+
+            // Freeze the game
+            Time.timeScale = 0f; // This freezes the game
+
+            StartCoroutine(EndLevelSequence()); // Start the coroutine to handle the 3-second wait
+        }
     }
 
-    // If an Object with the tag 'Player' collides with the collectible, the collectible disappears.
-    void OnTriggerEnter2D(Collider2D target){
-        if(target.gameObject.tag == "Player"){
-            Destroy(gameObject);
+    // Coroutine to pause for 3 seconds before loading the next level
+    private IEnumerator EndLevelSequence()
+    {
+        completionText.gameObject.SetActive(true);
+
+        // Wait for 3 seconds while the game is frozen
+        yield return new WaitForSecondsRealtime(3); // Use WaitForSecondsRealtime to ignore time scale
+
+        // Load the next scene
+        LoadNextScene();
+    }
+
+    // Function to load the next level
+    public void LoadNextScene()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        // Reset time scale to normal before loading the next scene
+        Time.timeScale = 1f;
+
+        // Check if there is another scene in the build settings
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex); // Load the next scene
+        }
+        else
+        {
+            // If no more levels, load the splash screen or an end screen
+            SceneManager.LoadScene("SplashScreen");
         }
     }
 }

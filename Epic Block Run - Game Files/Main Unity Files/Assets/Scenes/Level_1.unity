@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1340,18 +1339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9378d800d3e8a9749a2729b7321a8123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &471703462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471703451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67fd99e912c783242b523f7dc0680314, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  collectible: {fileID: 471703451}
+  player: {fileID: 1816201626}
+  audioSource: {fileID: 843836969}
+  completionText: {fileID: 1451807846}
+  levelCompleteSound: {fileID: 8300000, guid: 376983403422bc749bcacf189a269146, type: 3}
 --- !u!1001 &509971420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1475,12 +1467,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -8567,7 +8559,7 @@ GameObject:
   - component: {fileID: 843836970}
   - component: {fileID: 843836969}
   m_Layer: 0
-  m_Name: LevelComplete
+  m_Name: Level Completion Sound Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11085,7 +11077,7 @@ GameObject:
   - component: {fileID: 1351534354}
   - component: {fileID: 1351534356}
   m_Layer: 0
-  m_Name: BGM
+  m_Name: BGM Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11361,7 +11353,7 @@ GameObject:
   - component: {fileID: 1451807847}
   - component: {fileID: 1451807846}
   m_Layer: 5
-  m_Name: Level Complete Message
+  m_Name: Level Completion Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11387,7 +11379,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level Complete
+  m_text: 'Level 1 Complete!
+
+
+    Loading Next Level...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12632,9 +12627,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4864717991346692678, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 471703457}
-    - targetCorrespondingSourceObject: {fileID: 4864717991346692678, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 471703462}
   m_SourcePrefab: {fileID: 100100000, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
 --- !u!1001 &1831903732515755990
 PrefabInstance:

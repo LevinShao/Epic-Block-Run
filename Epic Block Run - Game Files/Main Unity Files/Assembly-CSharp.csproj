@@ -66,7 +66,6 @@
     <Compile Include="Assets\Scripts\SplashScreenQuitConfirmation.cs" />
     <Compile Include="Assets\Scripts\MusicResetter.cs" />
     <Compile Include="Assets\Scripts\ClickToRestart.cs" />
-    <Compile Include="Assets\Scripts\NextLevel.cs" />
     <Compile Include="Assets\Scripts\AttemptCounter.cs" />
     <Compile Include="Assets\Scripts\LevelExitButton.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
@@ -78,7 +77,6 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\FPSLimiter.cs" />
-    <Compile Include="Assets\Scripts\LevelComplete.cs" />
     <Compile Include="Assets\Scripts\LevelExitButtonConfirmation.cs" />
     <Compile Include="Assets\Scripts\SplashScreenQuit.cs" />
   </ItemGroup>
