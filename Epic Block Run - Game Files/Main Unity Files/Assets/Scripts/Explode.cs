@@ -6,7 +6,8 @@ public class Explode : MonoBehaviour
     public AttemptCounter attemptCounter; // Reference to the AttemptCounter.cs script
     public MusicResetter musicResetter; // Reference to the MusicResetter.cs script
     public AudioSource deathSound; // Reference to the DeathSound SFX
-    public float respawnDelay = 0.5f; // Time before the player respawns
+    public float respawnDelay = 0.5f; // Time before the player respawn
+    public LevelTimer levelTimer; // Reference to the LevelTimer script
 
     private BoxCollider2D playerCollider;
     private Rigidbody2D rb;
@@ -44,13 +45,19 @@ public class Explode : MonoBehaviour
         // Stop the background music immediately when the player dies
         if (musicResetter != null)
         {
-            musicResetter.StopMusic(); // A method for resetting the music
+            musicResetter.StopMusic();
         }
 
         // Play the DeathSound SFX
         if (deathSound != null)
         {
             deathSound.Play();
+        }
+
+        // Pause the timer immediately when the player dies
+        if (levelTimer != null)
+        {
+            levelTimer.PauseTimer();
         }
 
         // Disable the player controls and collider
@@ -60,7 +67,7 @@ public class Explode : MonoBehaviour
         // StartCoroutine is a method that you declare with an IEnumerator return type 
         // and with a yield return statement included somewhere in the body.
 
-        // Start the respawn process
+        // Wait for the death SFX to finish before respawning
         StartCoroutine(RespawnPlayer());
     }
 
@@ -70,16 +77,22 @@ public class Explode : MonoBehaviour
     {
         // The yield return statement is crucial for the StartCoroutine and IEnumerator to work
         
-        // Wait for the respawn delay while the DeathSound SFX is playing
+        // Wait for 0.5 seconds so the death SFX could finish playing
         yield return new WaitForSeconds(respawnDelay);
 
-        // Move the player to the initial position where the player started the level
+        // Move the player to the initial position
         transform.position = initialPosition;
 
-        // Update the attempt counter and reset the music after respawning
+        // Reset the BGM, attempt counter and timer after player respawns
         if (attemptCounter != null)
         {
             attemptCounter.OnPlayerDeath();
+        }
+
+        if (levelTimer != null)
+        {
+            levelTimer.ResetTimer();
+            levelTimer.ResumeTimer();
         }
 
         if (musicResetter != null)
@@ -87,7 +100,7 @@ public class Explode : MonoBehaviour
             musicResetter.ResetMusic();
         }
 
-        // Enable the player's collider again when the player respawns
+        // Re-enable the player's collider to allow interactions again
         playerCollider.enabled = true;
     }
 }

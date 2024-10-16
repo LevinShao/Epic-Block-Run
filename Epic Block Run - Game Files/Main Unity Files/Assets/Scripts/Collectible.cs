@@ -10,7 +10,8 @@ public class Collectible : MonoBehaviour
     public GameObject player; // Reference to the player
     public AudioSource audioSource; // Reference to the level completion sound player's audio source component
     public TextMeshProUGUI completionText; // Reference to the level completion message
-    public AudioClip levelCompleteSound; // Level completion sound effect to play upon level completion
+    public AudioClip levelCompleteSound; // Reference to the level completion SFX
+    public LevelTimer levelTimer; // Reference to the LevelTimer script
 
     void Start()
     {
@@ -44,10 +45,17 @@ public class Collectible : MonoBehaviour
                 audioSource.PlayOneShot(levelCompleteSound);
             }
 
-            // Freeze the game
-            Time.timeScale = 0f; // This freezes the game
+            // Pause the timer
+            if (levelTimer != null)
+            {
+                levelTimer.PauseTimer();
+            }
 
-            StartCoroutine(EndLevelSequence()); // Start the coroutine to handle the 3-second wait
+            // Freeze the game
+            Time.timeScale = 0f;
+
+            // Start the coroutine to handle the 3-second wait
+            StartCoroutine(EndLevelSequence());
         }
     }
 
@@ -63,23 +71,19 @@ public class Collectible : MonoBehaviour
         LoadNextScene();
     }
 
-    // Function to load the next level
+    // Load the next level
     public void LoadNextScene()
     {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1; // Gets the next scene
 
         // Reset time scale to normal before loading the next scene
         Time.timeScale = 1f;
 
-        // Check if there is another scene in the build settings
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex); // Load the next scene
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings){ // If there is another scene
+            SceneManager.LoadScene(nextSceneIndex); // Loads the next scene
         }
-        else
-        {
-            // If no more levels, load the splash screen or an end screen
-            SceneManager.LoadScene("SplashScreen");
+        else{
+            SceneManager.LoadScene("SplashScreen"); // Load SplashScreen if there are no more scenes
         }
     }
 }
