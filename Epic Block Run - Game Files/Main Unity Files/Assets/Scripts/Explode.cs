@@ -40,7 +40,7 @@ public class Explode : MonoBehaviour
         }
     }
 
-    private void HandleDeath()
+    public void HandleDeath()
     {
         // Stop the background music immediately when the player dies
         if (musicResetter != null)
@@ -62,7 +62,7 @@ public class Explode : MonoBehaviour
 
         // Disable the player controls and collider
         playerCollider.enabled = false;
-        rb.velocity = Vector2.zero; // Stop the player movement
+        rb.linearVelocity = Vector2.zero; // Stop the player movement
 
         // StartCoroutine is a method that you declare with an IEnumerator return type 
         // and with a yield return statement included somewhere in the body.

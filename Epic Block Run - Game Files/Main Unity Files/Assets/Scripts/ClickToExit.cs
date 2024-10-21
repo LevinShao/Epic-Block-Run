@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement; // You MUST include this if you want to work with scenes / change scenes
 using UnityEngine.UI; // You MUST include this to work with User Interfaces (buttons in this case)
 
-public class ClickToQuit : MonoBehaviour
+public class ClickToExit : MonoBehaviour
 {
 	public Button exitButton;
 

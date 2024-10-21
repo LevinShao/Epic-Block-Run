@@ -36,8 +36,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         animator.SetInteger("AnimState", 0);
-        var absVelX = Mathf.Abs(body2D.velocity.x); // Creates a variable to store horizontal movement velocity (x)
-        var absVelY = Mathf.Abs(body2D.velocity.y); // Creates a variable to store vertical movement velocity (y)
+        var absVelX = Mathf.Abs(body2D.linearVelocity.x); // Creates a variable to store horizontal movement velocity (x)
+        var absVelY = Mathf.Abs(body2D.linearVelocity.y); // Creates a variable to store vertical movement velocity (y)
         var forceY = 0f; // Creates a variable to store force
 
           

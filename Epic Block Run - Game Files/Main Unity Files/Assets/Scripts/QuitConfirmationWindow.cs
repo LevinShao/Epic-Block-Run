@@ -1,12 +1,7 @@
-// THIS IS AN EXTENSION TO SplashScreenQuit.cs
-
-// The "exit confirmation window" referenced in this script refers to the exit confirmation window for the splash screen
-// Not the exit confirmation window for the main levels.
-
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SplashScreenQuitConfirmationHandler : MonoBehaviour
+public class QuitConfirmationWindow : MonoBehaviour
 {
     public Button confirmButton; // Reference to the confirm button
     public Button cancelButton; // Reference to the cancel button

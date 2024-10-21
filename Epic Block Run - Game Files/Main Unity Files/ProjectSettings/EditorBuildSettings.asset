@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SplashScreen.unity
     guid: 4b4b43add0f864347b7f6e1b5158fd60
   - enabled: 1
+    path: Assets/Scenes/TutorialLevel.unity
+    guid: 8f217c8b82e32bf428673b9d26481c10
+  - enabled: 1
     path: Assets/Scenes/Level_1.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    guid: 708eb32ca68b2ba47806c2c20d665c0d
   - enabled: 1
     path: Assets/Scenes/Level_2.unity
     guid: 51b5f91b0ac1a624f854115f37c8952c
@@ -30,3 +33,4 @@ EditorBuildSettings:
     path: Assets/Scenes/EndScreen.unity
     guid: 4ea3e89d71446b84ab648b352bf3104a
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
