@@ -7,7 +7,7 @@ public class Explode : MonoBehaviour
     public MusicResetter musicResetter; // Reference to the MusicResetter.cs script
     public AudioSource deathSound; // Reference to the DeathSound SFX
     public float respawnDelay = 0.5f; // Time before the player respawn
-    public LevelTimer levelTimer; // Reference to the LevelTimer script
+    public Stopwatch stopwatch; // Reference to the Stopwatch script
 
     private BoxCollider2D playerCollider;
     private Rigidbody2D rb;
@@ -54,10 +54,10 @@ public class Explode : MonoBehaviour
             deathSound.Play();
         }
 
-        // Pause the timer immediately when the player dies
-        if (levelTimer != null)
+        // Pause the stopwatch immediately when the player dies
+        if (stopwatch != null)
         {
-            levelTimer.PauseTimer();
+            stopwatch.PauseStopwatch();
         }
 
         // Disable the player controls and collider
@@ -83,16 +83,16 @@ public class Explode : MonoBehaviour
         // Move the player to the initial position
         transform.position = initialPosition;
 
-        // Reset the BGM, attempt counter and timer after player respawns
+        // Reset the BGM, attempt counter and stopwatch after player respawns
         if (attemptCounter != null)
         {
             attemptCounter.OnPlayerDeath();
         }
 
-        if (levelTimer != null)
+        if (stopwatch != null)
         {
-            levelTimer.ResetTimer();
-            levelTimer.ResumeTimer();
+            stopwatch.ResetStopwatch();
+            stopwatch.ResumeStopwatch();
         }
 
         if (musicResetter != null)

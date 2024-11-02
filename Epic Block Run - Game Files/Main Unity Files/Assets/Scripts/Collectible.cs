@@ -11,7 +11,8 @@ public class Collectible : MonoBehaviour
     public AudioSource audioSource; // Reference to the level completion sound player's audio source component
     public TextMeshProUGUI completionText; // Reference to the level completion message
     public AudioClip levelCompleteSound; // Reference to the level completion SFX
-    public LevelTimer levelTimer; // Reference to the LevelTimer script
+    public Stopwatch stopwatch; // Reference to the Stopwatch script
+    public GameObject pauseButton; // Reference to the pause button
 
     void Start()
     {
@@ -39,16 +40,22 @@ public class Collectible : MonoBehaviour
             if (playerSr != null)
                 playerSr.enabled = false; // Hide the player's visual appearance
 
+            // Deactivate the pause button when level is completed
+            if (pauseButton != null)
+            {
+                pauseButton.SetActive(false);
+            }
+
             // Play the level complete sound effect
             if (audioSource != null && levelCompleteSound != null)
             {
                 audioSource.PlayOneShot(levelCompleteSound);
             }
 
-            // Pause the timer
-            if (levelTimer != null)
+            // Pause the stopwatch
+            if (stopwatch != null)
             {
-                levelTimer.PauseTimer();
+                stopwatch.PauseStopwatch();
             }
 
             // Freeze the game

@@ -1868,27 +1868,14 @@ GameObject:
   - component: {fileID: 313293020}
   - component: {fileID: 313293019}
   - component: {fileID: 313293018}
-  - component: {fileID: 313293017}
+  - component: {fileID: 313293021}
   m_Layer: 5
-  m_Name: Level Timer
+  m_Name: Stopwatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &313293017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313293016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcee54480a4b3064884f6c49451c79c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 313293018}
 --- !u!114 &313293018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,6 +1994,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 996.5664, y: 42.5}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &313293021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313293016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f67a284d77033c43a2c2acdc669208b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopwatchText: {fileID: 313293018}
 --- !u!1001 &314630833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2759,7 +2759,7 @@ MonoBehaviour:
   musicResetter: {fileID: 1351534356}
   deathSound: {fileID: 1423865299}
   respawnDelay: 0.5
-  levelTimer: {fileID: 313293017}
+  stopwatch: {fileID: 313293021}
 --- !u!1001 &388663726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3183,7 +3183,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4864717991346692678, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
   m_PrefabInstance: {fileID: 754935643751419159}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &471703457
+--- !u!114 &471703452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3192,15 +3192,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 471703451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9378d800d3e8a9749a2729b7321a8123, type: 3}
+  m_Script: {fileID: 11500000, guid: dac420b3ebe925241b1cbf61a29edfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   collectible: {fileID: 471703451}
   player: {fileID: 374908327}
-  audioSource: {fileID: 843836969}
+  audioSource: {fileID: 1351534354}
   completionText: {fileID: 762812195}
   levelCompleteSound: {fileID: 8300000, guid: 376983403422bc749bcacf189a269146, type: 3}
-  levelTimer: {fileID: 313293017}
+  stopwatch: {fileID: 313293021}
+  pauseButton: {fileID: 1548814740}
 --- !u!1001 &478318734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25036,7 +25037,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4864717991346692678, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 471703457}
+      addedObject: {fileID: 471703452}
   m_SourcePrefab: {fileID: 100100000, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
 --- !u!1001 &5078082543256729340
 PrefabInstance:

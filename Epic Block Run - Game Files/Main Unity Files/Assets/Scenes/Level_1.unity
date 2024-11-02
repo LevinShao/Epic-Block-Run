@@ -406,7 +406,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4754219349594416538, guid: 9bb551ffc73bf574fa00dfa2416fd18d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -383.91632
+      value: -384.002
       objectReference: {fileID: 0}
     - target: {fileID: 4754219349594416538, guid: 9bb551ffc73bf574fa00dfa2416fd18d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1915,7 +1915,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4754219349594416538, guid: 9bb551ffc73bf574fa00dfa2416fd18d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -389.0763
+      value: -389.107
       objectReference: {fileID: 0}
     - target: {fileID: 4754219349594416538, guid: 9bb551ffc73bf574fa00dfa2416fd18d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2169,7 +2169,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4864717991346692678, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
   m_PrefabInstance: {fileID: 754935643751419159}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &471703457
+--- !u!114 &471703458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2178,15 +2178,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 471703451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9378d800d3e8a9749a2729b7321a8123, type: 3}
+  m_Script: {fileID: 11500000, guid: dac420b3ebe925241b1cbf61a29edfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   collectible: {fileID: 471703451}
   player: {fileID: 1816201626}
-  audioSource: {fileID: 843836969}
+  audioSource: {fileID: 1351534354}
   completionText: {fileID: 1451807846}
   levelCompleteSound: {fileID: 8300000, guid: 376983403422bc749bcacf189a269146, type: 3}
-  levelTimer: {fileID: 733666754}
+  stopwatch: {fileID: 733666757}
+  pauseButton: {fileID: 127063759}
 --- !u!1 &492335653
 GameObject:
   m_ObjectHideFlags: 0
@@ -9553,9 +9554,9 @@ GameObject:
   - component: {fileID: 733666753}
   - component: {fileID: 733666756}
   - component: {fileID: 733666755}
-  - component: {fileID: 733666754}
+  - component: {fileID: 733666757}
   m_Layer: 5
-  m_Name: Level Timer
+  m_Name: Stopwatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9580,19 +9581,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000015258789, y: 0}
   m_SizeDelta: {x: 996.5664, y: 42.5}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &733666754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733666752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcee54480a4b3064884f6c49451c79c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 733666755}
 --- !u!114 &733666755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9692,6 +9680,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733666752}
   m_CullTransparentMesh: 1
+--- !u!114 &733666757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733666752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f67a284d77033c43a2c2acdc669208b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopwatchText: {fileID: 733666755}
 --- !u!1 &757981207
 GameObject:
   m_ObjectHideFlags: 0
@@ -12966,7 +12967,7 @@ MonoBehaviour:
   musicResetter: {fileID: 1351534356}
   deathSound: {fileID: 862395558}
   respawnDelay: 0.5
-  levelTimer: {fileID: 733666754}
+  stopwatch: {fileID: 733666757}
 --- !u!1001 &1817343033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13948,7 +13949,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4864717991346692678, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 471703457}
+      addedObject: {fileID: 471703458}
   m_SourcePrefab: {fileID: 100100000, guid: 508b811fe897e2a4bb86811da602f9bb, type: 3}
 --- !u!1001 &1831903732515755990
 PrefabInstance:
