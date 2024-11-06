@@ -5,7 +5,7 @@ using TMPro;  // Must inport this for volume percentage text to update
 public class BGMVolumeAdjuster : MonoBehaviour
 {
     public Slider volumeSlider;  // Reference to the volume slider
-    public AudioSource BGM;      // Reference to the BGM 
+    public AudioSource BGM;      // Reference to the BGM
     public TextMeshProUGUI volumePercentageText;  // Reference to the volume percentage text
 
     // PlayerPrefs is a class that stores Player preferences between game sessions

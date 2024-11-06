@@ -80,7 +80,6 @@
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\ClickToExit.cs" />
     <Compile Include="Assets\Scripts\MusicResetter.cs" />
-    <Compile Include="Assets\Scripts\NextLevel.cs" />
     <Compile Include="Assets\Scripts\QuitConfirmationWindow.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />
     <Compile Include="Assets\Scripts\ColorSwitchingText.cs" />

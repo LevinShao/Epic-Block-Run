@@ -3,7 +3,7 @@ using TMPro;
 
 public class AttemptCounter : MonoBehaviour
 {
-    public TextMeshProUGUI attemptText; // Reference to the TextMeshProUGUI element
+    public TextMeshProUGUI attemptText; // Reference to the attempt counter text
     private int attemptCount = 1; // Start from attempt 1
 
     void Start()
@@ -15,11 +15,11 @@ public class AttemptCounter : MonoBehaviour
     // This method is called when the player dies
     public void OnPlayerDeath()
     {
-        attemptCount++; // Increment the attempt counter
-        UpdateAttemptText(); // Update the UI text
+        attemptCount++; // Increase the number on the attempt counter by 1
+        UpdateAttemptText(); // Update the UI text visually before player respawns
     }
 
-    // Updates the attempt text on the UI
+    // Method to update the UI text visually before player respawns
     private void UpdateAttemptText()
     {
         attemptText.text = "Attempt " + attemptCount;

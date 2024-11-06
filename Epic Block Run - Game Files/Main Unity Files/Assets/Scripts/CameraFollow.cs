@@ -12,8 +12,7 @@ public class CameraFollow : MonoBehaviour
     void Awake()
     {
         var cam = GetComponent<Camera>(); // Gets the camera into our script here
-        cam.orthographicSize = 15; // Sets the size of the camera
-
+        cam.orthographicSize = 18; // Sets the size of the camera
     }
 
     void Start() // Start is called before the first frame update

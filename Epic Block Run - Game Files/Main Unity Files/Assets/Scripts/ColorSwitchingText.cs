@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public class ColorSwitchingText : MonoBehaviour
 {
-    public Text myText; // Reference to the UI Text component
+    public Text myText; // Reference to the game title text
     public float speed = 1.0f; // Speed of the color change
 
     private void Start()
     {
         if (myText == null)
         {
-            myText = GetComponent<Text>(); // Get the Text component if not assigned
+            myText = GetComponent<Text>(); // Fetch the game title's text component
         }
         StartCoroutine(ChangeColor());
     }

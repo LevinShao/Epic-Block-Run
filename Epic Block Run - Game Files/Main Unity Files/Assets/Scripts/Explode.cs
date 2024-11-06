@@ -9,8 +9,8 @@ public class Explode : MonoBehaviour
     public float respawnDelay = 0.5f; // Time before the player respawn
     public Stopwatch stopwatch; // Reference to the Stopwatch script
 
-    private BoxCollider2D playerCollider;
-    private Rigidbody2D rb;
+    private BoxCollider2D playerCollider; // Store the player's hitbox
+    private Rigidbody2D rb; // Store the RigidBody component
     private Vector3 initialPosition; // Store the player's initial position
 
     void Start()
@@ -25,7 +25,7 @@ public class Explode : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D target)
     {
-        // Check if the player collides with a deadly object (i.e. a spike)
+        // Check if the player collides with a spike
         if (target.CompareTag("Deadly"))
         {
             HandleDeath();
@@ -48,7 +48,7 @@ public class Explode : MonoBehaviour
             musicResetter.StopMusic();
         }
 
-        // Play the DeathSound SFX
+        // Play the Death Sound SFX
         if (deathSound != null)
         {
             deathSound.Play();

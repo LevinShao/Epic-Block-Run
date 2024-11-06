@@ -1,3 +1,7 @@
+// NOTE: Anything to do with Canvas Group in this script is useless. What I tried to do failed
+// And I wasn't bothered to remove those code because I feared that I could accidently tamper with useful code in the process
+// Since I don't want anything to break, I just left them there.
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +12,7 @@ public class SkipTutorialWindow : MonoBehaviour
     public Button noButton;
     public Button okayButton;
 
-    private CanvasGroup canvasGroup; // Canvas Group to control interaction
+    private CanvasGroup canvasGroup;
 
     void Start()
     {
@@ -60,8 +64,7 @@ public class SkipTutorialWindow : MonoBehaviour
     {
         skipTutorialPanel.SetActive(false);
 
-        // Re-enable interaction with other UI elements
-        canvasGroup.blocksRaycasts = false;  // Re-enable other UI interactions
+        canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
     }
 }

@@ -1,9 +1,9 @@
 using UnityEngine;
-using TMPro;
+using TMPro;  // must import this for stopwatch to work
 
 public class Stopwatch : MonoBehaviour
 {
-    public TextMeshProUGUI stopwatchText; // Reference to the Level Stopwatch TMP Text
+    public TextMeshProUGUI stopwatchText; // Reference to the stopwatch text
     private float stopwatch = 0f;
     private bool isTiming = true;
 
@@ -13,7 +13,7 @@ public class Stopwatch : MonoBehaviour
         if (isTiming)
         {
             stopwatch += Time.deltaTime;
-            // This formats the stopwatch UI to 2 decimal places
+            // This formats the stopwatch to 2 decimal places
             stopwatchText.text = stopwatch.ToString("F2");
         }
     }

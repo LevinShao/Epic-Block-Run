@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.47, y: -3.47}
+  m_AnchoredPosition: {x: 20.47, y: -6.7}
   m_SizeDelta: {x: 42.613, y: 13.3764}
   m_Pivot: {x: 0.901581, y: 0.23666835}
 --- !u!114 &21787341
@@ -2679,7 +2679,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1100225340474155704, guid: 572a92d4850f19b47aa29f9329fa67d2, type: 3}
       propertyPath: speed
-      value: 160
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1784334343712813192, guid: 572a92d4850f19b47aa29f9329fa67d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3202,6 +3202,7 @@ MonoBehaviour:
   levelCompleteSound: {fileID: 8300000, guid: 376983403422bc749bcacf189a269146, type: 3}
   stopwatch: {fileID: 313293021}
   pauseButton: {fileID: 1548814740}
+  targetScene: Level_6
 --- !u!1001 &478318734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3626,7 +3627,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 18
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4483,7 +4484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.2700005, y: -1.1599998}
+  m_AnchoredPosition: {x: -1.2700005, y: -4.1}
   m_SizeDelta: {x: 17.9467, y: 5.843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685618787
@@ -21964,7 +21965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.67, y: -5.94}
+  m_AnchoredPosition: {x: 25.67, y: -9}
   m_SizeDelta: {x: 42.613, y: 13.3764}
   m_Pivot: {x: 0.901581, y: 0.23666835}
 --- !u!114 &1301931489

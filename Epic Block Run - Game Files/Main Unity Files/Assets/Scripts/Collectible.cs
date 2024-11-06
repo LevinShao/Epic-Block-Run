@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; // Important, if working with scenes you MUST include this.
 using TMPro;
 
 public class Collectible : MonoBehaviour
@@ -13,6 +13,7 @@ public class Collectible : MonoBehaviour
     public AudioClip levelCompleteSound; // Reference to the level completion SFX
     public Stopwatch stopwatch; // Reference to the Stopwatch script
     public GameObject pauseButton; // Reference to the pause button
+    [SerializeField] private string targetScene;  // Let the player decide which scene the collectible should teleport the player to
 
     void Start()
     {
@@ -25,7 +26,7 @@ public class Collectible : MonoBehaviour
         {
             levelCompleted = true; // Mark level as completed to avoid multiple triggers
 
-            // Hide the collectible by disabling its visual appearance (like SpriteRenderer)
+            // Hide the collectible by disabling its SpriteRenderer
             SpriteRenderer sr = collectible.GetComponent<SpriteRenderer>();
             if (sr != null)
                 sr.enabled = false; // Hide the visual appearance of the collectible
@@ -78,19 +79,16 @@ public class Collectible : MonoBehaviour
         LoadNextScene();
     }
 
-    // Load the next level
     public void LoadNextScene()
     {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1; // Gets the next scene
-
-        // Reset time scale to normal before loading the next scene
         Time.timeScale = 1f;
 
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings){ // If there is another scene
-            SceneManager.LoadScene(nextSceneIndex); // Loads the next scene
+        // try-catch is similar to try-except in Python, but for C#
+        try {
+            SceneManager.LoadScene(targetScene);  // Load the target scene
         }
-        else{
-            SceneManager.LoadScene("SplashScreen"); // Load SplashScreen if there are no more scenes
+        catch {
+            SceneManager.LoadScene("SplashScreen"); // Load Splash Screen if there are no more scenes
         }
     }
 }
